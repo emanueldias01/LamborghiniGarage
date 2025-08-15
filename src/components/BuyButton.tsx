@@ -5,7 +5,7 @@ export default function BuyButton(){
     return(
         <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.button}>
-                <AntDesign name="shoppingcart" size={20}/>
+                <AntDesign name="shoppingcart" size={20} color={'white'} />
                 <Text style={styles.text}>Buy This!</Text>
             </TouchableOpacity>
         </View>
@@ -24,10 +24,12 @@ const styles = StyleSheet.create({
     },
     button: {
         flexDirection: 'row',
+        paddingHorizontal: 30,
         gap: 5
     },
     text: {
         fontWeight: 'bold',
-        fontStyle: 'italic'
+        fontStyle: 'italic',
+        color: 'white'
     }
 })

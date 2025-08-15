@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import logo from '../../assets/logo.png'
 import { CAR_ASSETS_BASE_URL } from "../consts/car";
 import BuyButton from "./BuyButton";
+import PriceButtons from "./PriceButtons";
 
 export default function CardView(){
     return(
@@ -15,6 +16,7 @@ export default function CardView(){
                 source={{uri: `${CAR_ASSETS_BASE_URL}1.png`}}
                 />
                 <BuyButton />
+                <PriceButtons />
             </View>
         </View>
     )
@@ -60,6 +62,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 300,
         height: 300,
-        marginBottom: 10
+        marginBottom: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#fff'
     }
 })
