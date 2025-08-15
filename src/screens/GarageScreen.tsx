@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native"
 import { StatusBar } from "expo-status-bar"
+import CardView from "../components/CardView"
 
 
 export default function GarageScreen(){
@@ -11,6 +12,7 @@ export default function GarageScreen(){
                 <View style={[styles.triangleCorner, styles.topRight]}></View>
                 <View style={[styles.triangleCorner, styles.bottomLeft]}></View>
                 <View style={[styles.triangleCorner, styles.bottomRight]}></View>
+                <CardView />
             </View>
             <Text>Garage works!!</Text>
         </View>
