@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import logo from '../../assets/logo.png'
-import { CAR_ASSETS_BASE_URL } from "../consts/car";
-import BuyButton from "./BuyButton";
-import PriceButtons from "./PriceButtons";
+import logo from '../../../assets/logo.png'
+import { CAR_ASSETS_BASE_URL } from "../../consts/car";
+import BuyButton from "../BuyButton/BuyButton";
+import PriceButtons from "../PriceButton/PriceButtons";
 
 export default function CardView(){
     return(

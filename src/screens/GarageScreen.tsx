@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native"
 import { StatusBar } from "expo-status-bar"
-import CardView from "../components/CardView"
+import CardView from "../components/CardView/CardView"
 
 
 export default function GarageScreen(){
