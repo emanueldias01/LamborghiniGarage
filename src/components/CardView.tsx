@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import logo from '../../assets/logo.png'
 import { CAR_ASSETS_BASE_URL } from "../consts/car";
+import BuyButton from "./BuyButton";
 
 export default function CardView(){
     return(
@@ -13,6 +14,7 @@ export default function CardView(){
                 style={styles.imageCar} 
                 source={{uri: `${CAR_ASSETS_BASE_URL}1.png`}}
                 />
+                <BuyButton />
             </View>
         </View>
     )

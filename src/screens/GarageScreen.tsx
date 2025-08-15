@@ -14,7 +14,6 @@ export default function GarageScreen(){
                 <View style={[styles.triangleCorner, styles.bottomRight]}></View>
                 <CardView />
             </View>
-            <Text>Garage works!!</Text>
         </View>
     )
 }
