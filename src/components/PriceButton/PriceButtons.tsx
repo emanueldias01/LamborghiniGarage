@@ -1,16 +1,26 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 
-export default function PriceButtons(){
+export default function PriceButtons({setIdCar, valueCar} : any){
+
+    const nextCar = () => {
+        setIdCar((value : number) => Math.min(10, value + 1));
+        
+    }
+
+    const previousCar = () => {
+        setIdCar((value: number) => Math.max(1, value - 1));
+    }
+
     return(
         <View style={styles.buttonsContainer}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={previousCar}>
                 <Text style={{color : 'white'}}>{'<'}</Text>
             </TouchableOpacity>
             <View style={styles.containerPrice}>
-                <Text style={styles.textPrice}>VALUE</Text>
+                <Text style={styles.textPrice}>{valueCar}</Text>
             </View>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={nextCar}>
                 <Text style={{color : 'white'}}>{'>'}</Text>
             </TouchableOpacity>
         </View>

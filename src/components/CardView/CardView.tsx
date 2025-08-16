@@ -3,20 +3,37 @@ import logo from '../../../assets/logo.png'
 import { CAR_ASSETS_BASE_URL } from "../../consts/car";
 import BuyButton from "../BuyButton/BuyButton";
 import PriceButtons from "../PriceButton/PriceButtons";
+import { useEffect, useState } from "react";
+import { getCars, getImageCars } from "../../utils/getCars";
+import { CarModel } from "../../model/CarModel";
 
 export default function CardView(){
+    const [car, setCar] = useState<CarModel | null>();
+    const [image, setImage] = useState<string>();
+    const [idCar, setIdCar] = useState(1);
+
+    useEffect(() => {
+        async function initRender(){
+            const resp = await getCars(idCar);
+            setCar(resp);
+            const image = getImageCars(idCar);
+            setImage(image);
+        }
+        initRender();
+    }, [idCar]);
+    
     return(
         <View style={styles.containerCard}>
             <Image style={styles.image} source={logo}/>
             <View style={styles.car}>
                 <Text style={styles.carBrand}>Lamborghini</Text>
-                <Text style={styles.carName}>Model</Text>
+                <Text style={styles.carName}>{car?.carName}</Text>
                 <Image
                 style={styles.imageCar} 
-                source={{uri: `${CAR_ASSETS_BASE_URL}1.png`}}
+                source={{uri: image}}
                 />
                 <BuyButton />
-                <PriceButtons />
+                <PriceButtons valueCar={car?.price} setIdCar={setIdCar}/>
             </View>
         </View>
     )

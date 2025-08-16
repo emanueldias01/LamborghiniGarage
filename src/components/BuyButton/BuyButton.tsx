@@ -1,10 +1,15 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { AntDesign } from '@expo/vector-icons'
 
 export default function BuyButton(){
+
+    const handleBuy = () => {
+        Alert.alert("Your Lamborghini has been successfully purchased!");
+    }
+
     return(
         <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={handleBuy}>
                 <AntDesign name="shoppingcart" size={20} color={'white'} />
                 <Text style={styles.text}>Buy This!</Text>
             </TouchableOpacity>
